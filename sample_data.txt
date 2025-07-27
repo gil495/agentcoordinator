@@ -1,0 +1,151 @@
+# mock_data.py - Sample data for testing agents
+
+HUBSPOT_LEADS = [
+    {
+        "id": "lead_001",
+        "name": "John Smith",
+        "email": "john.smith@techcorp.com",
+        "company": "TechCorp Inc",
+        "phone": "+1-555-0123",
+        "status": "qualified",
+        "created_date": "2025-07-25",
+        "last_activity": "2025-07-25T14:30:00Z"
+    },
+    {
+        "id": "lead_002", 
+        "name": "Sarah Johnson",
+        "email": "sarah.j@innovate.io",
+        "company": "Innovate Solutions",
+        "phone": "+1-555-0456",
+        "status": "qualified",
+        "created_date": "2025-07-25",
+        "last_activity": "2025-07-25T15:45:00Z"
+    },
+    {
+        "id": "lead_003",
+        "name": "Michael Chen",
+        "email": "m.chen@dataflow.com",
+        "company": "DataFlow Systems",
+        "phone": "+1-555-0789",
+        "status": "new",
+        "created_date": "2025-07-25",
+        "last_activity": "2025-07-25T16:20:00Z"
+    }
+]
+
+NOTION_MEETING_NOTES = {
+    "meeting_001": {
+        "id": "zoom_meeting_001",
+        "title": "Sales Discovery Call - July 25, 2025",
+        "date": "2025-07-25",
+        "attendees": ["John Smith (TechCorp)", "Sarah Johnson (Innovate)", "Michael Chen (DataFlow)"],
+        "duration": "45 minutes",
+        "key_points": [
+            "All three companies are evaluating enterprise automation solutions",
+            "Budget approved for Q3 implementation across all prospects",
+            "Technical requirements: API integrations, SSO, advanced reporting",
+            "Current pain points: manual data entry, disconnected systems",
+            "Timeline: Decision by August 15th, implementation by September"
+        ],
+        "action_items": [
+            "Send follow-up email with pricing tiers",
+            "Schedule technical demo for next week",
+            "Share relevant case studies (similar company size)",
+            "Provide API documentation",
+            "Connect with technical teams for requirements review"
+        ],
+        "next_steps": [
+            "Technical demo - July 30th",
+            "Proposal deadline - August 5th",
+            "Final decision - August 15th"
+        ],
+        "notes": "Very engaged prospects. Strong fit for our enterprise tier. Competition mentioned: Competitor A, Competitor B. Our differentiators: superior API, better support, proven ROI."
+    },
+    "meeting_002": {
+        "id": "zoom_meeting_002", 
+        "title": "Product Demo Follow-up - July 24, 2025",
+        "date": "2025-07-24",
+        "attendees": ["Lisa Park (GrowthCo)", "David Wilson (ScaleTech)"],
+        "duration": "30 minutes",
+        "key_points": [
+            "Positive feedback on product demo",
+            "Questions about scalability and performance",
+            "Interest in custom integrations",
+            "Budget discussions ongoing internally"
+        ],
+        "action_items": [
+            "Provide performance benchmarks",
+            "Custom integration cost estimate",
+            "Schedule follow-up in one week"
+        ]
+    }
+}
+
+GMAIL_TEMPLATES = {
+    "follow_up": {
+        "subject": "Follow-up from our Zoom call - Next Steps",
+        "template": """Hi {name},
+
+Thank you for joining our discovery call yesterday. It was great learning more about {company}'s automation needs and current challenges.
+
+Based on our discussion, here are the key points we covered:
+{key_points}
+
+Next Steps:
+{action_items}
+
+I've attached some relevant resources that address the specific requirements you mentioned. I'm confident our enterprise solution can help {company} achieve the efficiency gains and ROI you're looking for.
+
+I'll follow up early next week to schedule the technical demo we discussed. In the meantime, please don't hesitate to reach out with any questions.
+
+Best regards,
+Sales Team
+
+---
+Resources attached:
+- Enterprise Feature Overview
+- API Integration Guide  
+- ROI Calculator
+- Customer Success Stories"""
+    },
+    "demo_invite": {
+        "subject": "Technical Demo Invitation - {company}",
+        "template": """Hi {name},
+
+I hope this email finds you well. Following up on our conversation, I'd like to schedule the technical demo we discussed for {company}.
+
+Proposed times for next week:
+- Tuesday, July 30th at 2:00 PM EST
+- Wednesday, July 31st at 10:00 AM EST  
+- Thursday, August 1st at 3:00 PM EST
+
+The demo will cover:
+- Live walkthrough of key features
+- API integration examples
+- Custom workflow setup
+- Q&A session with our technical team
+
+Please let me know which time works best for you and your technical team.
+
+Looking forward to showing you what our platform can do for {company}!
+
+Best regards,
+Sales Team"""
+    }
+}
+
+# Additional mock responses for different scenarios
+MOCK_RESPONSES = {
+    "error_scenarios": {
+        "no_leads": "No leads found matching the specified criteria",
+        "api_timeout": "HubSpot API timeout - please try again",
+        "invalid_date": "Invalid date format specified",
+        "missing_notes": "No meeting notes found for the specified date"
+    },
+    "success_messages": {
+        "leads_retrieved": "Successfully retrieved {count} leads from HubSpot",
+        "notes_fetched": "Meeting notes retrieved from Notion",
+        "emails_sent": "Follow-up emails sent to {count} recipients",
+        "task_completed": "All tasks completed successfully"
+    }
+}
